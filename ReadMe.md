@@ -23,8 +23,7 @@ If you like this component or you're using it in your own software so please let
 
 
 ##Documentation
-The documentation of this project is auto generated using [Appledoc](http://gentlebytes.com/appledoc/) by [@gentlebytes](https://twitter.com/gentlebytes).<br />
-You can find the complete reference [here](http://CNTreeNode.cocoanaut.com/documentation/) or [here (CocoaDocs](http://cocoadocs.org/docsets/CNTreeNode/).
+You can find the complete reference [here (CocoaDocs)](http://cocoadocs.org/docsets/CNTreeNode/).
 
 
 ##License
