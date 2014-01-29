@@ -8,6 +8,6 @@ Pod::Spec.new do |s|
   s.osx.deployment_target = '10.7'
   s.ios.deployment_target = '6.0'
   s.requires_arc          = true
-  s.source_files          = '*.{h,m}'
+  s.source_files          = 'CNTreeNode/*.{h,m}'
   s.license               = { :type => 'MIT', :file => 'ReadMe.md' }
 end

@@ -17,6 +17,6 @@
 --logformat xcode \
 --verbose 4 \
 --index-desc "./doc_index.md" \
---output "./doc" \
+--output "./Documentation" \
 --ignore "*.m" \
 ./
