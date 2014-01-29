@@ -185,8 +185,8 @@
     node 3.0.0              -> level 0
         node 3.1.0          -> level 1
  
- The level will be set automatically on adding an instance of `CNTreeNode` as a child to another one.
- The default value (on object creation) is `0`.
+ The level will be determined dynamically each time it is requested. It starts from the receiver up to all its
+ parent nodes. The lowest level is `1`.
  */
 @property (assign, nonatomic, readonly) NSUInteger nodeLevel;
 

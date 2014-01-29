@@ -129,7 +129,7 @@
 #pragma mark - Child Node States
 
 - (NSUInteger)nodeLevel {
-	NSUInteger level = 0;
+	NSUInteger level = 1;
 	if (self.parentNode != nil) {
 		level += self.parentNode.nodeLevel;
 	}
