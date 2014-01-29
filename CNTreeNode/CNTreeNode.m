@@ -91,8 +91,8 @@
 	[_childNodes addObject:theChild];
 }
 
-- (void)addChildNodes:(NSArray *)ChildNodes {
-	for (CNTreeNode *aChild in theChildren) {
+- (void)addChildNodes:(NSArray *)theChildNodes {
+	for (CNTreeNode *aChild in theChildNodes) {
 		[self addChild:aChild];
 	}
 }
