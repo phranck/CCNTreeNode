@@ -1,3 +1,6 @@
+[![Flattr this git repo](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=phranck&url=https://github.com/phranck/CNTreeNode&title=CNTreeNode&tags=github&category=software)
+
+
 ##Overview
 
 Using `CNTreeNode` is a convenient and easy way to build a tree of nested objects. You can use it as a datasource for your table view, source view or what ever.

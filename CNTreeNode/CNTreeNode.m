@@ -102,9 +102,16 @@
 }
 
 - (void)removeChild:(CNTreeNode *)theChild {
+    // the node that has to be deleted is a direct child of the receiver
 	if ([_childNodes containsObject:theChild]) {
 		[_childNodes removeObject:theChild];
 	}
+    // otherwise we are looking a step deeper...
+    else {
+        [_childNodes enumerateObjectsUsingBlock:^(CNTreeNode *childNode, NSUInteger idx, BOOL *stop) {
+            [childNode removeChild:theChild];
+        }];
+    }
 }
 
 - (void)removeChildAtIndex:(NSUInteger)index {
