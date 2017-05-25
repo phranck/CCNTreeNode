@@ -1,5 +1,5 @@
 //
-//  CNTreeNode.h
+//  CCNTreeNode
 //
 //  Created by Frank Gregor on 13.01.14.
 //  Copyright (c) 2014 cocoa:naut. All rights reserved.
@@ -28,11 +28,12 @@
  THE SOFTWARE.
  */
 
+#import <Foundation/Foundation.h>
 
 /**
- Using `CNTreeNode` is a convenient and easy way to build a tree of nested objects. You can use it as a datasource for your table view, source view etc.
+ Using `CCNTreeNode` is a convenient and easy way to build a tree of nested objects. You can use it as a datasource for your table view, source view etc.
  */
-@interface CNTreeNode : NSObject
+@interface CCNTreeNode : NSObject
 
 #pragma mark - Child Node Collections
 /** @name Child Node Collections */
@@ -88,40 +89,40 @@
 /** @name Manipulating Child Node Collections */
 
 /**
- Adds an instance of `CNTreeNode` to the receiver as a child.
+ Adds an instance of `CCNTreeNode` to the receiver as a child.
  
  The level for newly added child will be set automatically (increased by 1).
 
- @param theChild An instance of `CNTreeNode`.
+ @param theChild An instance of `CCNTreeNode`.
  @see nodeLevel
  */
-- (void)addChild:(CNTreeNode *)theChild;
+- (void)addChild:(CCNTreeNode *)theChild;
 
 /**
  Adds an array of nodes.
  
- All array elements *must* be a `CNTreeNode` instance.
+ All array elements *must* be a `CCNTreeNode` instance.
 
  @param theChildNodes An array of child nodes.
  */
 - (void)addChildNodes:(NSArray *)theChildNodes;
 
 /**
- Inserts an instance of `CNTreeNode` at the given index.
+ Inserts an instance of `CCNTreeNode` at the given index.
  
  All following indexes will be moved backwards.
 
- @param childNode An instance of `CNTreeNode` to be inserted.
+ @param childNode An instance of `CCNTreeNode` to be inserted.
  @param index     The index the child node should be placed.
  */
-- (void)insertChild:(CNTreeNode *)childNode atIndex:(NSUInteger)index;
+- (void)insertChild:(CCNTreeNode *)childNode atIndex:(NSUInteger)index;
 
 /**
  Removes the given child node.
 
- @param childNode An instance of `CNTreeNode` to be removed.
+ @param childNode An instance of `CCNTreeNode` to be removed.
  */
-- (void)removeChild:(CNTreeNode *)childNode;
+- (void)removeChild:(CCNTreeNode *)childNode;
 
 /**
  Removes a child node at the given index.
@@ -140,9 +141,9 @@
 
  @param index The index of the child node that should be returned.
 
- @return The requested `CNTreeNode` instance.
+ @return The requested `CCNTreeNode` instance.
  */
-- (CNTreeNode *)childAtIndex:(NSUInteger)index;
+- (CCNTreeNode *)childAtIndex:(NSUInteger)index;
 
 
 
@@ -150,12 +151,12 @@
 /** @name Managing Parent Nodes */
 
 /**
- Property representing the parent `CNTreeNode` object.
+ Property representing the parent `CCNTreeNode` object.
 
  The parent object is one level up from the receivers level. The lowest level is `0`.
  @see nodeLevel
  */
-@property (strong) CNTreeNode *parentNode;
+@property (strong) CCNTreeNode *parentNode;
 
 
 
@@ -165,7 +166,7 @@
 /**
  Property that indicates whether the receiver is expanded.
  
- This property is useful if `CNTreeNode` is used to visualize a tree. You can mark specific tree nodes as 
+ This property is useful if `CCNTreeNode` is used to visualize a tree. You can mark specific tree nodes as
  being expanded or collapsed.
  
  @return `YES` if the node is expanded (default value), otherwise `NO`.

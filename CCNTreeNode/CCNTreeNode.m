@@ -1,5 +1,5 @@
 //
-//  CNF4TreeNode.m
+//  CCNTreeNode.m
 //
 //  Created by Frank Gregor on 13.01.14.
 //  Copyright (c) 2014 cocoa:naut. All rights reserved.
@@ -29,15 +29,15 @@
  */
 
 
-#import "CNTreeNode.h"
+#import "CCNTreeNode.h"
 
 
-@interface CNTreeNode() {
+@interface CCNTreeNode() {
     NSMutableOrderedSet *_childNodes;
 }
 @end
 
-@implementation CNTreeNode
+@implementation CCNTreeNode
 
 #pragma mark - Initialization
 
@@ -65,7 +65,7 @@
 - (NSArray *)childNodesFlattened {
 	__block NSMutableArray *flattenedChildren = [[NSMutableArray alloc] init];
 	[flattenedChildren addObject:self];
-	for (CNTreeNode *aChild in _childNodes) {
+	for (CCNTreeNode *aChild in _childNodes) {
 		if (aChild.isExpanded) {
 			[flattenedChildren addObjectsFromArray:aChild.childNodesFlattened];
 		}
@@ -75,7 +75,7 @@
 
 - (NSUInteger)deepNumberOfChildNodes {
 	NSUInteger numberOfChildren = 0;
-	for (CNTreeNode *aChild in _childNodes) {
+	for (CCNTreeNode *aChild in _childNodes) {
 		numberOfChildren++;
 		if (aChild.isExpanded) {
 			numberOfChildren += aChild.deepNumberOfChildNodes;
@@ -86,29 +86,29 @@
 
 #pragma mark - Manipulating Child Node Collections
 
-- (void)addChild:(CNTreeNode *)theChild {
+- (void)addChild:(CCNTreeNode *)theChild {
 	theChild.parentNode = self;
 	[_childNodes addObject:theChild];
 }
 
 - (void)addChildNodes:(NSArray *)theChildNodes {
-	for (CNTreeNode *aChild in theChildNodes) {
+	for (CCNTreeNode *aChild in theChildNodes) {
 		[self addChild:aChild];
 	}
 }
 
-- (void)insertChild:(CNTreeNode *)theChild atIndex:(NSUInteger)index {
+- (void)insertChild:(CCNTreeNode *)theChild atIndex:(NSUInteger)index {
 	[_childNodes insertObject:theChild atIndex:index];
 }
 
-- (void)removeChild:(CNTreeNode *)theChild {
+- (void)removeChild:(CCNTreeNode *)theChild {
     // the node that has to be deleted is a direct child of the receiver
 	if ([_childNodes containsObject:theChild]) {
 		[_childNodes removeObject:theChild];
 	}
     // otherwise we are looking a step deeper...
     else {
-        [_childNodes enumerateObjectsUsingBlock:^(CNTreeNode *childNode, NSUInteger idx, BOOL *stop) {
+        [_childNodes enumerateObjectsUsingBlock:^(CCNTreeNode *childNode, NSUInteger idx, BOOL *stop) {
             [childNode removeChild:theChild];
         }];
     }
@@ -122,9 +122,9 @@
 
 #pragma mark - Handling Child Nodes
 
-- (CNTreeNode *)childAtIndex:(NSUInteger)index {
-	__block CNTreeNode *childAtIndex = nil;
-	[_childNodes enumerateObjectsUsingBlock: ^(CNTreeNode *aChild, NSUInteger idx, BOOL *stop) {
+- (CCNTreeNode *)childAtIndex:(NSUInteger)index {
+	__block CCNTreeNode *childAtIndex = nil;
+	[_childNodes enumerateObjectsUsingBlock: ^(CCNTreeNode *aChild, NSUInteger idx, BOOL *stop) {
 	    if (idx == index) {
 	        childAtIndex = aChild;
 	        *stop = YES;
