@@ -24,7 +24,7 @@ Just drag the `CCNTreeNode.*` files into your project.
 
 
 ## Contribution
-The code is provided as-is, and it is far off being complete or free of bugs. If you like this component feel free to support it. Make changes related to your needs, extend it or just use it in your own project. Feedbacks are very welcome. Just contact me at [opensource@cocoanaut.com](mailto://opensource@cocoanaut.com] Your component on Github), send me a ping on **Twitter** [@TheCocoaNaut](http://twitter.com/TheCocoaNaut). 
+The code is provided as-is, and it is far off being complete or free of bugs. If you like this component feel free to support it. Make changes related to your needs, extend it or just use it in your own project. Feedbacks are very welcome. Just contact me at [opensource@cocoanaut.com](mailto:opensource@cocoanaut.com) or send me a [ping on Twitter](http://twitter.com/TheCocoaNaut). 
 
 If you like this component or you're using it in your own software so please let me know. I'll give you a mention and set a link to your website (or the Mac App Store, if it exists).
 
